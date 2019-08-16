@@ -14,6 +14,8 @@ exports.up = function(knex) {
       tbl.increments()
       tbl.integer('recipeId').unsigned().notNullable().references('recipes.id')
       tbl.integer('ingredientId').unsigned().notNullable().references('ingredients.id')
+      tbl.float('quantity').unsigned().notNullable()
+      tbl.text('unit')
     })
     .createTable('instructions', tbl => {
       tbl.increments()
@@ -28,7 +30,7 @@ exports.down = function(knex) {
   return (
     knex.schema
     .dropTableIfExists('instructions')
-    .dropTableIfExists('recipe-ingredients')
+    .dropTableIfExists('recipe_ingredients')
     .dropTableIfExists('ingredients')
     .dropTableIfExists('recipes')
   )
