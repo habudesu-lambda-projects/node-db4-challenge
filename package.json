@@ -4,5 +4,11 @@
     "knex": "^0.19.1",
     "knex-cleaner": "^1.3.0",
     "sqlite3": "^4.0.9"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  },
+  "scripts": {
+    "server": "nodemon index.js"
   }
 }
