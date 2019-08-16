@@ -5,7 +5,7 @@ const router = express.Router()
 const Ingredients = require('./ingredient-model.js')
 
 router.get('/:id/recipes', async (req, res) => {
-  const { id } = request.params
+  const { id } = req.params
   try {
     const recipes = await Ingredients.getRecipes(id)
     res.status(200).json(recipes)
